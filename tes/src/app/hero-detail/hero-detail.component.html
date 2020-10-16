@@ -1,0 +1,40 @@
+<div *ngIf="hero" style="padding-top: 140px; padding-left: 40px;">
+
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div class="top">
+
+    <div>
+      <span class="em">Age: </span>{{hero.age}} years
+    </div>
+
+    <div>
+      <span class="em"> Description: </span> &nbsp; {{hero.des}}
+    </div>
+
+    <div>
+      <span class="em"> Pelage: </span> &nbsp; {{hero.pelage}}
+    </div>
+
+    <div>
+      <label class="em">
+        Edit Horse name: &nbsp;
+        <input style="border-radius: 4px; border: none;" [(ngModel)]="hero.name" placeholder="name" />
+      </label>
+      <p></p>
+    </div>
+
+
+    <div class="wrapper-no4">
+      <button class="button-bird2" (click)="goBack()">
+        <p class="button-bird_text">Go back</p>
+      </button>
+
+      <button class="button-bird" (click)="save()">
+        <p class="button-bird__text">Save</p>
+        <span class="bird--30"></span>
+      </button>
+    </div>
+
+  </div>
+
+</div>

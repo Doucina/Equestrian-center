@@ -1,0 +1,33 @@
+<div class="disp">
+  <h3>Top Heroes</h3>
+  <div class="grid grid-pad">
+    <a *ngFor="let hero of heroes" class="col-1-4" routerLink="/detail/{{hero.id}}">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+
+            <div class="module hero" >
+              <h4 class="spec">{{hero.name}}</h4>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="https://freepngimg.com/thumb/horse/62-horse-png-image-download-picture-transparent-background.png" width="66" height="49" />
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+  <div>
+    <label>Hero name:
+      <input #heroName />
+    </label>
+  
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>
+</div>
+
+<app-hero-search></app-hero-search>
