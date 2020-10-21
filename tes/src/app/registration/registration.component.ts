@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RegistrationService } from '../registration.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-registration',
@@ -6,10 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  user = new User();
+    msg = '';
 
-  constructor() { }
+  constructor(private _service: RegistrationService, private _router: Router) { }
 
   ngOnInit(): void {
   }
 
+  registerUser() {
+    this._service.registerUserFromRemote(this.user).subscribe(
+      data => {
+        console.log("Response received");
+        this._router.navigate(['/login'])
+      },
+
+      error => {
+        console.log("Exception occured");
+        this.msg= error.error;
+      }
+    )
+  }
+
+  gotologin(){
+    this._router.navigate(['/login'])
+  }    
 }

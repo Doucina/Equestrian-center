@@ -11,11 +11,13 @@ public class RegistrationController {
     @Autowired
     private RegistrationService service;
 
-    @PostMapping("/registeruser")
+    @PostMapping("registeruser")
+    @CrossOrigin(origins = "http://localhost:4200/login")
+
     public User registerUser(@RequestBody User user) throws Exception {
         String tempEmailId = user.getEmailId();
 
-        if (tempEmailId != null && "".equals(tempEmailId)) {
+        if (tempEmailId != null && !"".equals(tempEmailId)) {
             User userobj = service.fetchUserByEmailId(tempEmailId);
             if (userobj != null) {
                 throw new Exception("user with "+tempEmailId+" already exists");
@@ -27,7 +29,8 @@ public class RegistrationController {
         return userObj;
     }
 
-    @PostMapping("login")
+    @PostMapping("/login")
+    @CrossOrigin(origins = "http://localhost:4200/login")
     public User loginUser(@RequestBody User user) throws Exception {
         String tempEmailId = user.getEmailId();
         String tempPass = user.getPassword();
