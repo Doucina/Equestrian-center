@@ -1,46 +1,6 @@
 /* DashboardComponent's private CSS styles */
 body {font-family: Arial, Helvetica, sans-serif;}
 
-[class*='col-'] {
-  float: left;
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
-
-[class*='col-']:last-of-type {
-  padding-right: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-h3 {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-h4 {
-  position: relative;
-}
-
-.grid {
-  margin: 30;
-}
-
-.col-1-4 {
-  width: 25%;
-  padding-left: 8px;
-}
-
 
 .container {
   position: absolute;
@@ -68,15 +28,11 @@ h4 {
   color: black;
 }
 
-/* .bg-img { */
-  /* background-image: url("https://wallpapercave.com/wp/4hMB4xK.jpg"); */
-  /* https://vp-eu.scene7.com/is/image/vpeu/00_20200928_int_poster */
-  /* min-height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-} */
+.fa {
+  float:right; 
+  margin-top: -40px; 
+  color: rgb(15, 70, 33);
+}
 
 .disp {
   padding-top: 80px;
@@ -92,7 +48,7 @@ h4 {
 .module {
   padding: 20px;
   text-align: center;
-  /* background: rgb(112,105,240,1); */
+  background: #607d8b;
   border-radius: 8px;
 }
 
@@ -112,7 +68,7 @@ h4 {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* 
 .flip-card {
   background-color: transparent;
   height: 65px;
@@ -144,7 +100,7 @@ body {
 }
 
 .flip-card-front {
-  /* background-color: #333; */
+  /*--------- background-color: #333; 
   background: linear-gradient(-90deg, #282858 40%, #373772 100%);
   color: white;
 }
@@ -155,22 +111,71 @@ body {
   transform: rotateY(180deg);
   padding: 20px;
   padding-top: 10px;
+} */
+
+
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h4 {
+  position: relative;
+}
+
+.grid {
+  margin: 30;
+}
+
+.col-1-4 {
+  width: 25%;
+  padding-left: 8px;
+}
+
+
+.module:hover {
+  background-color: #eee;
+  cursor: pointer;
+  color: #1c2022;
+}
+
+
 .spec {
-  color: white;
-  font-weight: 400;
+  color: black;
+  font-weight: 500;
   font-size: 20px;
 }
 
 .grid-pad {
-  padding: 50px 30px;
-  display: grid;
+  padding: 50px 15em;
+  display: inline-table;
 }
 
 .grid-pad>[class*='col-']:last-of-type {
   padding-right: 20px;
 }
+
 
 @media (max-width: 600px) {
   .module {

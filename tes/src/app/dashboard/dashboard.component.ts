@@ -8,6 +8,13 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  hero: Hero = {
+    id: 1,
+    name: 'Windstorm',
+    des: 'bla',
+    age: 25,
+  };
   heroes: Hero[] = [];
   selectedHero: Hero;
 
@@ -15,12 +22,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+      .subscribe(heroes => this.heroes = heroes.slice(1, 9));
   }
 
   getHeroes(): void {
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+      .subscribe(heroes => this.heroes = heroes.slice(1, 9));
   }
 
   add(name: string): void {

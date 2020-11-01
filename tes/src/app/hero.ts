@@ -3,5 +3,4 @@ export interface Hero {
     name: string;
     des: string;
     age: number;
-    pelage: string;
   }

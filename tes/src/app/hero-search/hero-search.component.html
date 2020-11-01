@@ -1,21 +1,18 @@
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<div id="search-component">
-  <div class="tb">
-    <div class="td">
+<div id="search-component" class="container">
 
-      <input #searchBox type="text" id="search-box" (input)="search(searchBox.value)" placeholder="Search a horse" required>
-      <i class="fa fa-search"	style="font-size: 28px;"> </i> 
-      <ul class="search-result">
-        <li *ngFor="let hero of heroes$ | async">
-          <a routerLink="/detail/{{hero.id}}">
-            {{hero.name}}
-          </a>
-        </li>
-      </ul>
+  <input #searchBox type="text" id="search-box" (input)="search(searchBox.value)" placeholder="Search a horse" required autocomplete="off">
+  <div class="search"></div>
 
-    </div>
-  </div>
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async">
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+
 </div>

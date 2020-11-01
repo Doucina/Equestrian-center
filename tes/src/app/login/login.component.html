@@ -1,16 +1,4 @@
-<!-- 
 
-<div class="container" id="container">
-<div class="form-container log-in-container">
-    <form action="#">
-        <h1>Login</h1>
-        <a></a>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <a></a>
-        <button>Log In</button>
-    </form>
-</div> -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,33 +12,32 @@
     <div class="form-container log-in-container">
 
 
-      <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <form [formGroup]="ngForm" (ngSubmit)="loginUser()">
         <h1 class="textual">Login</h1>
         <small class="text-danger">{{msg}}</small>
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="user.emailId" required
-            #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}">
+          <input type="email" class="form-control" placeholder="Email" formControlName="emailId" 
+          required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}">
 
-          <div *ngIf="email.errors && (email.invalid && email.touched)">
-            <small class="text-danger" *ngIf="email.errors.required"> Required field </small>
-            <small class="text-danger" *ngIf="email.errors.pattern"> Enter a valid email </small>
-          </div>
+          <!-- <div>
+            <small class="text-danger"> Required field </small>
+            <small class="text-danger"> Enter a valid email </small>
+          </div> -->
         </div>
 
 
         <div class="form-group">
-          <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password"
-            required #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
-          <small class="text-danger" [class.d-none]="password.valid || password.untouched">Required field</small>
+          <input type="password" class="form-control" placeholder="Password" formControlName="password"
+            required >
+          <small class="text-danger">Required field</small>
         </div>
 
         <div class="checkbox">
           <label><input type="checkbox" name="remember"> Remember me</label>
         </div>
 
-        <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info" style="border: none;">Login</button>
+        <button [disabled]="!ngForm.valid" type="submit" class="btn btn-info" style="border: none;">Login</button>
         <small class="lin" [routerLink]="['/registration']">New user ? Register here !</small>
-
       </form>
 
     </div>

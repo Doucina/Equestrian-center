@@ -15,7 +15,6 @@ export class HeroesComponent implements OnInit {
     name: 'Windstorm',
     des: 'bla',
     age: 25,
-    pelage: 'roux',
   };
 
   heroes: Hero[];

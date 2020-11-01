@@ -11,8 +11,8 @@ public class RegistrationController {
     @Autowired
     private RegistrationService service;
 
-    @PostMapping("registeruser")
-    @CrossOrigin(origins = "http://localhost:4200/login")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/api/registeruser")
 
     public User registerUser(@RequestBody User user) throws Exception {
         String tempEmailId = user.getEmailId();
@@ -29,8 +29,8 @@ public class RegistrationController {
         return userObj;
     }
 
-    @PostMapping("/login")
-    @CrossOrigin(origins = "http://localhost:4200/login")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/api/login")
     public User loginUser(@RequestBody User user) throws Exception {
         String tempEmailId = user.getEmailId();
         String tempPass = user.getPassword();
