@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginsuccessComponent } from './loginsuccess.component';
+import { CavalierPageComponent } from './cavalier-page.component';
 
-describe('LoginsuccessComponent', () => {
-  let component: LoginsuccessComponent;
-  let fixture: ComponentFixture<LoginsuccessComponent>;
+describe('CavalierPageComponent', () => {
+  let component: CavalierPageComponent;
+  let fixture: ComponentFixture<CavalierPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginsuccessComponent ]
+      declarations: [ CavalierPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginsuccessComponent);
+    fixture = TestBed.createComponent(CavalierPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
