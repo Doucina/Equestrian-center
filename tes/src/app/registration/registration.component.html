@@ -9,14 +9,13 @@
   <div class="container" id="container">
     <div class="form-container log-in-container">
 
-      <form #Registerform="ngForm" (ngSubmit)="registerUser()">
-        <h2 class="textual"> Registration</h2>
-<br>
-        <!-- <small class="text-danger">{{msg}}</small> -->
-        <!-- [class.text-danger]="msg.status==500" -->
+      <form #Registerform="ngForm" (ngSubmit)="registerUser()" class="was-validated">
+        <h2 class="textual"> Registration</h2> <br>
+
         <div class="form-group">
           <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="user.emailId" required
-            #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}">
+            #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}">
 
           <div *ngIf="email.errors && (email.invalid && email.touched)">
             <small class="text-danger" *ngIf="email.errors.required"> Required field </small>

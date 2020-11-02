@@ -16,6 +16,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { LoginComponent } from './login/login.component';
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { HomeComponent } from './home/home.component';
+import { LoginmoniteurComponent } from './loginmoniteur/loginmoniteur.component';
+import { LogincavalierComponent } from './logincavalier/logincavalier.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { RegistrationComponent } from './registration/registration.component';
     RegistrationComponent,
     LoginComponent,
     LoginsuccessComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomeComponent,
+    LoginmoniteurComponent,
+    LogincavalierComponent
   ],
   
   imports: [
