@@ -1,10 +1,8 @@
-import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegistrationService } from '../registration.service';
 import { User } from '../user';
-import { FormControl, FormGroup, FormBuilder, Validator, Validators,ReactiveFormsModule } from "@angular/forms";
+import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -24,7 +22,6 @@ export class LoginComponent implements OnInit {
       password : ['', Validators.required]
     });
   }
-
 
   loginUser() {
 

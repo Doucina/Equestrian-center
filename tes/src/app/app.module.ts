@@ -19,6 +19,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { LoginmoniteurComponent } from './loginmoniteur/loginmoniteur.component';
 import { LogincavalierComponent } from './logincavalier/logincavalier.component';
+import { LoginadminComponent } from './loginadmin/loginadmin.component';
+import { LoginsuperadminComponent } from './loginsuperadmin/loginsuperadmin.component';
+import { MoniteurPageComponent } from './moniteur-page/moniteur-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { LogincavalierComponent } from './logincavalier/logincavalier.component'
     RegistrationComponent,
     HomeComponent,
     LoginmoniteurComponent,
-    LogincavalierComponent
+    LogincavalierComponent,
+    LoginadminComponent,
+    LoginsuperadminComponent,
+    MoniteurPageComponent
   ],
   
   imports: [

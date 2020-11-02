@@ -2,21 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegistrationService } from '../registration.service';
 import { User } from '../user';
-import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 
 @Component({
-  selector: 'app-logincavalier',
-  templateUrl: './logincavalier.component.html',
-  styleUrls: ['./logincavalier.component.css']
+  selector: 'app-loginadmin',
+  templateUrl: './loginadmin.component.html',
+  styleUrls: ['./loginadmin.component.css']
 })
-export class LogincavalierComponent implements OnInit {
-  user = new User();
+export class LoginadminComponent implements OnInit {  user = new User();
   msg = '';
   ngForm: FormGroup;
 
   constructor(private _formBuilder: FormBuilder, private _service: RegistrationService, private _router: Router) { }
 
+  
   ngOnInit(): void {
     this.ngForm = this._formBuilder.group({
       emailId : ['', [Validators.required, Validators.email]],
@@ -46,4 +46,9 @@ export class LogincavalierComponent implements OnInit {
 
     )
   }
+
+  gotoregistration(){
+    this._router.navigate(['/registration'])
+  }
+
 }

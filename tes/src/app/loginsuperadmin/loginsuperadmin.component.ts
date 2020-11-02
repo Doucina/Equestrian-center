@@ -6,11 +6,11 @@ import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
 
 
 @Component({
-  selector: 'app-logincavalier',
-  templateUrl: './logincavalier.component.html',
-  styleUrls: ['./logincavalier.component.css']
+  selector: 'app-loginsuperadmin',
+  templateUrl: './loginsuperadmin.component.html',
+  styleUrls: ['./loginsuperadmin.component.css']
 })
-export class LogincavalierComponent implements OnInit {
+export class LoginsuperadminComponent implements OnInit {
   user = new User();
   msg = '';
   ngForm: FormGroup;
@@ -19,8 +19,8 @@ export class LogincavalierComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngForm = this._formBuilder.group({
-      emailId : ['', [Validators.required, Validators.email]],
-      password : ['', Validators.required]
+      emailId: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
     });
   }
 
@@ -28,22 +28,22 @@ export class LogincavalierComponent implements OnInit {
 
     this._service.loginUserFromRemote(
       {
-        id:-1,
+        id: -1,
         emailId: this.ngForm.get('emailId').value,
         userName: "",
         password: this.ngForm.get('password').value,
-      } as User ).subscribe(
+      } as User).subscribe(
 
-      // error => {
-      //   console.log("Exception occured");
-      //   this.msg = "Bad credentials, please enter valid emailId and password";
-      // }, 
-      
-      data => {
-        console.log("Response received");
-        this._router.navigate(['/dashboard'])
-      },
+        // error => {
+        //   console.log("Exception occured");
+        //   this.msg = "Bad credentials, please enter valid emailId and password";
+        // }, 
 
-    )
+        data => {
+          console.log("Response received");
+          this._router.navigate(['/dashboard'])
+        },
+
+      )
   }
 }
