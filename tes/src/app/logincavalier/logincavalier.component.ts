@@ -41,7 +41,7 @@ export class LogincavalierComponent implements OnInit {
       
       data => {
         console.log("Response received");
-        this._router.navigate(['/dashboard'])
+        this._router.navigate(['/cavalier-page'])
       },
 
     )

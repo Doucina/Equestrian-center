@@ -41,7 +41,7 @@ export class LoginadminComponent implements OnInit {  user = new User();
       
       data => {
         console.log("Response received");
-        this._router.navigate(['/dashboard'])
+        this._router.navigate(['/admin-page'])
       },
 
     )
