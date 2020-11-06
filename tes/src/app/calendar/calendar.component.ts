@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+// import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
+import { INITIAL_EVENTS, createEventId } from '../event-utils';
+import { formatDate } from '@fullcalendar/core'
 
 @Component({
   selector: 'app-calendar',
@@ -16,66 +19,88 @@ export class CalendarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  calendarVisible = true;
   calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    eventClick: this.handleEventClick.bind(this), // bind is important!
-    events: [
-      { title: 'Cours Tornado', date: '2020-11-09' },
-      { title: 'Cours Eclair', date: '2020-11-05' },
-      { title: 'Cours Orphée', date: '2020-11-19' },
-      { title: 'Cours Chataigne', date: '2020-11-24' }
-    ]
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+    
+    },
+    initialView: 'timeGridWeek',
+    initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
+    weekends: true,
+    editable: true,
+    selectable: true,
+    selectMirror: true,
+    dayMaxEvents: true,
+    select: this.handleDateSelect.bind(this),
+    eventClick: this.handleEventClick.bind(this),
+    eventsSet: this.handleEvents.bind(this)
+    /* you can update a remote database when these fire:
+    eventAdd:
+    eventChange:
+    eventRemove:
+    */
   };
+  currentEvents: EventApi[] = [];
 
-  handleEventClick(arg) {
-
-
-      (async () => {
-        const { value: heure } = await Swal.fire({
-          title: 'Cours équitation',
-          input: 'select',
-          inputOptions: {
-            'matin': {
-              '9h': '9h',
-              '10h30': '10h30',
-            },
-            'après-midi': {
-              '15h15': '15h15',
-            },
-          },
-          inputPlaceholder: 'Choisir un créneau',
-          showCancelButton: true,
-          inputValidator: (value) => {
-            if (!value) {
-              return 'Vous devez choisir un créneau !'
-            }
-            return new Promise((resolve) => {
-              if (value === 'matin') {
-                resolve()
-              } else if (value === '9h'){
-                resolve()
-              } else {
-                resolve()
-              }
-            })
-          }
-        })
-
-        if (heure) {
-          Swal.fire({
-            text: `Session prévue à ${heure}`,
-            // icon: 'success',
-            title: arg.event._def.title + ' programmé !',
-      
-            imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.veiYnSAWM3-09TjQZ9maVQHaE7&pid=Api&P=0&w=281&h=188',
-            imageWidth: 500,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
-          })
-        }
-
-      })()
-
+  handleCalendarToggle() {
+    this.calendarVisible = !this.calendarVisible;
   }
+
+  handleWeekendsToggle() {
+    const { calendarOptions } = this;
+    calendarOptions.weekends = !calendarOptions.weekends;
+  }
+
+  handleDateSelect(selectInfo: DateSelectArg) {
+    const title = prompt('Please enter a title for your event');
+    const calendarApi = selectInfo.view.calendar;
+
+    calendarApi.unselect(); // clear date selection
+
+    if (title) {
+      calendarApi.addEvent({
+        id: createEventId(),
+        title,
+        start: selectInfo.startStr,
+        end: selectInfo.endStr,
+        allDay: selectInfo.allDay,
+        // start_date: selectInfo.startStr  Test ....
+      });
+    }
+    
+  }
+
+  handleEventClick(clickInfo: EventClickArg) {
+    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+      clickInfo.event.remove();
+    }
+    // } else {
+    //   clickInfo.event.edit();
+    // }
+  }
+
+  handleEvents(events: EventApi[]) {
+    this.currentEvents = events;
+  }
+
+  
+  // handleEventClick(arg) {
+  //       if (heure) {
+  //         Swal.fire({
+  //           text: `Session prévue à ${heure}`,
+  //           // icon: 'success',
+  //           title: arg.event._def.title + ' programmé !',
+      
+  //           imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.veiYnSAWM3-09TjQZ9maVQHaE7&pid=Api&P=0&w=281&h=188',
+  //           imageWidth: 500,
+  //           imageHeight: 200,
+  //           imageAlt: 'Custom image',
+  //         })
+  //       }
+  //     })()
+  // }
 
 }
