@@ -12,7 +12,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { MessagesComponent } from './messages/messages.component';
 import { LoginComponent } from './login/login.component';
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -44,7 +43,6 @@ FullCalendarModule.registerPlugins([
     DashboardComponent,
     HeroDetailComponent,
     HeroSearchComponent,
-    MessagesComponent,
     RegistrationComponent,
     LoginComponent,
     LoginsuccessComponent,
