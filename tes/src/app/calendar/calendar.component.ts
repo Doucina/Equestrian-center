@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
-// import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
 import { INITIAL_EVENTS, createEventId } from '../event-utils';
-import { formatDate } from '@fullcalendar/core'
+// import { formatDate } from '@fullcalendar/core'
 
 @Component({
   selector: 'app-calendar',
@@ -24,11 +24,11 @@ export class CalendarComponent implements OnInit {
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-    
+      right: 'timeGridWeek,timeGridDay,listWeek'
+
     },
     initialView: 'timeGridWeek',
-    initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
+    initialEvents: INITIAL_EVENTS,
     weekends: true,
     editable: true,
     selectable: true,
@@ -55,7 +55,8 @@ export class CalendarComponent implements OnInit {
   }
 
   handleDateSelect(selectInfo: DateSelectArg) {
-    const title = prompt('Please enter a title for your event');
+    const title = prompt('Please enter a title for your event' + '   ' +
+    '#Event is dragable and resizable');
     const calendarApi = selectInfo.view.calendar;
 
     calendarApi.unselect(); // clear date selection
@@ -67,40 +68,67 @@ export class CalendarComponent implements OnInit {
         start: selectInfo.startStr,
         end: selectInfo.endStr,
         allDay: selectInfo.allDay,
-        // start_date: selectInfo.startStr  Test ....
       });
     }
-    
+
   }
 
   handleEventClick(clickInfo: EventClickArg) {
-    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove();
-    }
-    // } else {
-    //   clickInfo.event.edit();
-    // }
+
+    Swal.fire({
+      title: 'What do you want to do ?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: `Edit`,
+      denyButtonText: `Delete`,
+    }).then((result) => {
+
+
+      if (result.isDenied) {
+        if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+          clickInfo.event.remove();
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      }
+
+      else if (result.isConfirmed) {
+        (async () => {
+
+          const { value: text } = await Swal.fire({
+            title: 'Edit Event',
+            input: 'text',
+            inputPlaceholder: 'Event name'
+          })
+
+          // A l'aide !!!!! Pour remplacer 2 résultats !!!!!!!
+          // if (text =! clickInfo.event.title) {
+          //   Swal.fire(`${text}`)
+          // //  '${clickInfo.event.title}'.replaceWith(`${text}`);
+          //   }
+
+          if (text) {
+            Swal.fire({
+              text: `Session prévue à ${text}`,
+              title: clickInfo.event.title + ' programmé !',
+
+              imageUrl: 'https://tse4.mm.bing.net/th?id=OIP.asMHfEaWEHMgKTeVm3C4AgHaEo&pid=Api&P=0&w=289&h=181',
+              imageWidth: 500,
+              imageHeight: 160,
+              imageAlt: 'Custom image',
+            })
+          }
+        })()
+      }
+    })
   }
 
   handleEvents(events: EventApi[]) {
     this.currentEvents = events;
   }
 
-  
-  // handleEventClick(arg) {
-  //       if (heure) {
-  //         Swal.fire({
-  //           text: `Session prévue à ${heure}`,
-  //           // icon: 'success',
-  //           title: arg.event._def.title + ' programmé !',
-      
-  //           imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.veiYnSAWM3-09TjQZ9maVQHaE7&pid=Api&P=0&w=281&h=188',
-  //           imageWidth: 500,
-  //           imageHeight: 200,
-  //           imageAlt: 'Custom image',
-  //         })
-  //       }
-  //     })()
-  // }
 
 }

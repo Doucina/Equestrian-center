@@ -2,19 +2,15 @@
   <a routerLink="/riding-lessons">
     <button mat-button>S'inscrire à un cours</button>
   </a>
-</card-actions>
-
-
-<card-actions>
-  <a routerLink="/account-management">
-    <button mat-button>Gérer mon compte</button>
-  </a>
 </card-actions> -->
 
 
+<div class="disp">
+  <div class="card" style="left: 22em; background-image: url('https://tse2.mm.bing.net/th?id=OIP.B-NL-fVqZ6i6tVNQo7q9TgHaEo&pid=Api&P=0&w=289&h=181')" [routerLink]="['']">
+    <h4 class="text">S'inscrire à un cours</h4>
+  </div>
 
-<!-- 
-<form [formGroup]="ngForm">
-    <h2>Gestion de mon compte</h2>
-    <input placeholder="Nom" formControlName="lastname" required>
-    <input matInput placeholder="Email" formControlName="email" required> -->
+  <div class="card" style="left: 26em; background-image: url('https://wallpapercave.com/wp/nibMq0c.jpg')" [routerLink]="['//account-management']">
+    <h4 class="text">Gérer mon compte</h4>
+  </div>
+</div>

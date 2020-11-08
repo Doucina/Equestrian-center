@@ -2,22 +2,17 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@4/bulma.css" rel="stylesheet">
+<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui@4/material-ui.css" rel="stylesheet">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 
-<!-- <div class="disp">
-<div class="container" id="container">
-    <full-calendar  [options]="calendarOptions" style="width: 1300px;"></full-calendar>
-  </div>
-
-</div> -->
 
 <div class="disp">
   <div class="container" id="container">
     <div class='demo-app'>
+
       <div class='demo-app-sidebar'>
         <div class='demo-app-sidebar-section'>
-          <h2>All Events ({{currentEvents.length}})</h2>
+          <h2>All Horse Events ({{currentEvents.length}})</h2>
           <ul>
             <li *ngFor='let event of currentEvents'>
               <b>{{event.startStr}}</b>
@@ -30,7 +25,7 @@
       <div class='demo-app-main'>
         <full-calendar *ngIf='calendarVisible' [options]='calendarOptions'></full-calendar>
       </div>
+
     </div>
   </div>
-
 </div>

@@ -2,8 +2,7 @@ import { EventInput } from '@fullcalendar/angular';
 
 let eventGuid = 0;
 const TODAY_STR = new Date().toISOString().replace(/T.*$/, ''); // YYYY-MM-DD of today
-const TO_STR = '2020-11-16';
-const TO2_STR = '2020-11-27';
+const TO_STR = '2020-12-16';
 
 export const INITIAL_EVENTS: EventInput[] = [
   {
@@ -14,26 +13,32 @@ export const INITIAL_EVENTS: EventInput[] = [
   {
     id: createEventId(),
     title: 'Special event',
-    start: TODAY_STR + 'T12:45:00'
+    start: '2020-11-16' + 'T14:45:00'
   },
   {
     id: createEventId(),
     title: 'Tornado Class',
-    start: TO_STR 
+    start: '2020-11-20' + 'T09:45:00',
+    end: '2020-11-20' + 'T11:30:00'  
   },
   {
     id: createEventId(),
     title: 'Orphée Class',
-    start: TO2_STR
+    start: '2020-11-26' + 'T12:00:00',
+    end: '2020-11-26' + 'T14:45:00'
   },
   {
     id: createEventId(),
     title: 'Pélican Class - Extra special options',
-    // start: TO2_STR
-    start: '2020-11-29',
-    end: '2020-12-01'
+    start: '2020-12-01' + 'T08:30:00',
+    end: '2020-12-01' + 'T13:00:00'
   },
-
+  {
+    id: createEventId(),
+    title: 'Donald Class',
+    start: '2020-12-07' + 'T11:30:00',
+    end: '2020-12-07' + 'T13:00:00',
+  }
 ];
 
 export function createEventId() {
