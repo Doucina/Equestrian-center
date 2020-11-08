@@ -18,6 +18,7 @@ import { CavalierPageComponent } from './cavalier-page/cavalier-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { SuperAdminPageComponent } from './super-admin-page/super-admin-page.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarLessonsComponent } from './calendar-lessons/calendar-lessons.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'admin-page', component: AdminPageComponent },
   { path: 'super-admin-page', component: SuperAdminPageComponent },
   { path: 'calendar', component: CalendarComponent },
+  { path: 'calendar-lessons', component: CalendarLessonsComponent },
 
 
 ];
