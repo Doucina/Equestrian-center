@@ -34,6 +34,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { CalendarLessonsComponent } from './calendar-lessons/calendar-lessons.component';
+import { AccountManComponent } from './account-man/account-man.component';
+import { UsersManComponent } from './users-man/users-man.component';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -63,7 +65,9 @@ FullCalendarModule.registerPlugins([
     AdminPageComponent,
     CavalierPageComponent,
     CalendarComponent,
-    CalendarLessonsComponent
+    CalendarLessonsComponent,
+    AccountManComponent,
+    UsersManComponent
   ],
   
   imports: [

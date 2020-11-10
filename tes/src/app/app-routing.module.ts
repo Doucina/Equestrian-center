@@ -19,6 +19,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { SuperAdminPageComponent } from './super-admin-page/super-admin-page.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarLessonsComponent } from './calendar-lessons/calendar-lessons.component';
+import { AccountManComponent } from './account-man/account-man.component';
+import { UsersManComponent } from './users-man/users-man.component';
 
 
 const routes: Routes = [
@@ -43,7 +45,8 @@ const routes: Routes = [
   { path: 'super-admin-page', component: SuperAdminPageComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'calendar-lessons', component: CalendarLessonsComponent },
-
+  { path: 'account-man', component: AccountManComponent },
+  { path: 'users-man', component: UsersManComponent },
 
 ];
 

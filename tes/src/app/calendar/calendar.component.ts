@@ -56,7 +56,7 @@ export class CalendarComponent implements OnInit {
 
   handleDateSelect(selectInfo: DateSelectArg) {
     const title = prompt('Please enter a title for your event' + '   ' +
-    '#Event is dragable and resizable');
+      '#Event is dragable and resizable');
     const calendarApi = selectInfo.view.calendar;
 
     calendarApi.unselect(); // clear date selection
@@ -111,15 +111,10 @@ export class CalendarComponent implements OnInit {
           //   }
 
           if (text) {
-            Swal.fire({
-              text: `Session prévue à ${text}`,
-              title: clickInfo.event.title + ' programmé !',
-
-              imageUrl: 'https://tse4.mm.bing.net/th?id=OIP.asMHfEaWEHMgKTeVm3C4AgHaEo&pid=Api&P=0&w=289&h=181',
-              imageWidth: 500,
-              imageHeight: 160,
-              imageAlt: 'Custom image',
-            })
+            Swal.fire(
+              'Edited!',
+              '',
+              'success')
           }
         })()
       }
