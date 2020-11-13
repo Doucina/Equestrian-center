@@ -23,21 +23,29 @@ public class Admin {
 
     @JsonCreator
     public Admin(@JsonProperty("adminId") int adminId,
-                    @JsonProperty("adminName") String adminName,
-                    @JsonProperty("adminEmailId") String adminEmailId,
-                    @JsonProperty("adminPassword") String adminPassword) {
+                 @JsonProperty("adminName") String adminName,
+                 @JsonProperty("adminEmailId") String adminEmailId,
+                 @JsonProperty("adminPassword") String adminPassword) {
         this.adminId = adminId;
         this.adminEmailId = adminEmailId;
         this.adminName = adminName;
         this.adminPassword = adminPassword;
     }
 
-    public String getAdminEmailId() {
-        return adminEmailId;
-    }
+    public String getAdminEmailId() { return adminEmailId; }
 
-    public String getAdminPassword() {
-        return adminPassword;
-    }
+    public void setAdminEmailId(String EmailId) { this.adminEmailId = EmailId; }
 
+    public String getAdminPassword() { return adminPassword; }
+
+    public void setAdminPassword(String password) { this.adminPassword = password; }
+
+    public int getAdminId() { return adminId; }
+
+    public void setAdminId(int adminId) { this.adminId = adminId; }
+
+    public String getAdminName() { return adminName; }
+
+    public void setAdminName(String adminName) { this.adminName = adminName; }
 }
+

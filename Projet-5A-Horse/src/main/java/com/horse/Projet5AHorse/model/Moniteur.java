@@ -40,4 +40,16 @@ public class Moniteur {
         return moniteurPassword;
     }
 
+    public int getMoniteurId() { return moniteurId; }
+
+    public void setMoniteurId(int moniteurId) { this.moniteurId = moniteurId; }
+
+    public void setMoniteurEmailId(String moniteurEmailId) { this.moniteurEmailId = moniteurEmailId; }
+
+    public String getMoniteurName() { return moniteurName; }
+
+    public void setMoniteurName(String moniteurName) { this.moniteurName = moniteurName; }
+
+    public void setMoniteurPassword(String moniteurPassword) { this.moniteurPassword = moniteurPassword; }
+
 }

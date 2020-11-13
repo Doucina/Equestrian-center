@@ -78,7 +78,6 @@ public class RegistrationController {
 
 
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/api/login")
     public User loginUser(@RequestBody User user) throws Exception {
         String tempEmailId = user.getEmailId();
@@ -96,7 +95,7 @@ public class RegistrationController {
     }
 
 
-    @PostMapping("/loginAdmin")
+    @PostMapping("/api/loginAdmin")
     public Admin loginAdmin (@RequestBody Admin admin) throws Exception {
         String tempEmailId = admin.getAdminEmailId();
         String tempPass = admin.getAdminPassword();
@@ -112,7 +111,7 @@ public class RegistrationController {
     }
 
 
-    @PostMapping("/loginSA")
+    @PostMapping("/api/loginSA")
     public Superadmin loginSA (@RequestBody Superadmin sa) throws Exception {
         String tempEmailId = sa.getSuperadminEmailId();
         String tempPass = sa.getSuperadminPassword();
@@ -127,7 +126,7 @@ public class RegistrationController {
         return userObj;
     }
 
-    @PostMapping("/loginMoniteur")
+    @PostMapping("/api/loginMoniteur")
     public Moniteur loginMoniteur (@RequestBody Moniteur moniteur) throws Exception {
         String tempEmailId = moniteur.getMoniteurEmailId();
         String tempPass = moniteur.getMoniteurPassword();

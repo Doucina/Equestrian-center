@@ -55,8 +55,8 @@ public class RegistrationService {
     public Admin fetchAdminByEmailId(String email){
         return repoAdmin.findByAdminEmailId(email);
     }
-    public Admin fetchAdminByEmailIdAndPassword(String email, String password){
-        return repoAdmin.findByAdminEmailIdAndAdminPassword(email, password);
+    public Admin fetchAdminByEmailIdAndPassword(String email, String Password){
+        return repoAdmin.findByAdminEmailIdAndAdminPassword(email, Password);
     }
 
 
