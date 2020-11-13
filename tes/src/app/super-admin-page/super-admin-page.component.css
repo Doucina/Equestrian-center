@@ -8,7 +8,7 @@ body {
   transition: 0.3s;
   width: 24%;
   height: 220px;
-  top: 10em;
+  top: 6em;
   border-radius: 7px;
   cursor: pointer;
   border: none;
@@ -39,3 +39,4 @@ body {
   background-size: cover;
   position: relative;
 }
+

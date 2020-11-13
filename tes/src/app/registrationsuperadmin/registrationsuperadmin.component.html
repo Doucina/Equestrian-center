@@ -10,11 +10,11 @@
   <div class="container" id="container">
     <div class="form-container log-in-container">
 
-      <form #Registerform="ngForm" (ngSubmit)="registerUser()" class="was-validated">
+      <form #Registerform="ngForm" (ngSubmit)="registerSuperadmin()" class="was-validated">
         <h2 class="textual"> Registration</h2> <br>
 
         <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="user.emailId" required
+          <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="superadmin.superadminEmailId" required
             #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
             pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}">
 
@@ -27,15 +27,15 @@
 
 
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="UserName" name="userName" [(ngModel)]="user.userName"
-            #userName="ngModel" required [class.is-invalid]="userName.invalid && userName.touched">
-          <small class="text-danger" [class.d-none]="userName.valid || userName.untouched"> Required field</small>
+          <input type="text" class="form-control" placeholder="Super Admin Name" name="superadminName" [(ngModel)]="superadmin.superadminName"
+            #superadminName="ngModel" required [class.is-invalid]="superadminName.invalid && superadminName.touched">
+          <small class="text-danger" [class.d-none]="superadminName.valid || superadminName.untouched"> Required field</small>
         </div>
 
 
 
         <div class="form-group">
-          <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password"
+          <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="superadmin.superadminPassword"
             required #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
           <small class="text-danger" [class.d-none]="password.valid || password.untouched">Required field</small>
         </div>
@@ -44,7 +44,7 @@
 
         <div class="form-group">
           <input type="password" class="form-control" placeholder="Confirm password" name="cpassword"
-            #cpassword="ngModel" required (ngModel)="user.password" required
+            #cpassword="ngModel" required (ngModel)="superadmin.superadminPassword" required
             [class.is-invalid]="password.invalid && password.touched">
           <small class="text-danger"
             [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Password
@@ -55,7 +55,7 @@
         <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
         <!-- <small class="float-right btextual" (click)="gotologin()">Existing user ? Login here !</small> -->
         <!-- <a></a> -->
-        <small class="lin" [routerLink]="['/login']">New user ? Register here !</small>
+        <small class="lin" [routerLink]="['/loginsuperadmin']">New user ? Register here !</small>
 
       </form>
 

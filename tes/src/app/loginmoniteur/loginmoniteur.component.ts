@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RegistrationService } from '../registration.service';
 import { User } from '../user';
 import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
+import { Moniteur } from '../moniteur';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
   styleUrls: ['./loginmoniteur.component.css']
 })
 export class LoginmoniteurComponent implements OnInit {
-  user = new User();
+  moniteur = new Moniteur();
   msg = '';
   ngForm: FormGroup;
 
@@ -24,27 +25,27 @@ export class LoginmoniteurComponent implements OnInit {
     });
   }
 
-  loginUser() {
+  loginMoniteur() {
 
-    this._service.loginUserFromRemote(
+    this._service.loginMoniteurFromRemote(
       {
-        id: -1,
-        emailId: this.ngForm.get('emailId').value,
-        userName: "",
-        password: this.ngForm.get('password').value,
-      } as User).subscribe(
-
-        // error => {
-        //   console.log("Exception occured");
-        //   this.msg = "Bad credentials, please enter valid emailId and password";
-        // }, 
+        moniteurId: -1,
+        moniteurEmailId: this.ngForm.get('emailId').value,
+        moniteurName: "",
+        moniteurPassword: this.ngForm.get('password').value,
+      } as Moniteur).subscribe(
 
         data => {
           console.log("Response received");
           this._router.navigate(['/moniteur-page'])
         },
-
+        error => {
+          console.log("Exception occured");
+          this.msg = "Bad credentials, please enter valid emailId and password";
+        },
       )
   }
-
+  gotoregistration() {
+    this._router.navigate(['/registrationmoniteur'])
+  }
 }

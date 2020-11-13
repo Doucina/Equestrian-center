@@ -3,11 +3,13 @@
 
 
 <div class="hero-image">
+  <app-loginsuccess></app-loginsuccess>
+
   <div class="container" id="container">
     <div class="form-container log-in-container">
 
 
-      <form [formGroup]="ngForm" (ngSubmit)="loginUser()" class="was-validated">
+      <form [formGroup]="ngForm" (ngSubmit)="loginMoniteur()" class="was-validated">
         <h2 class="textual">Login Moniteur</h2>
         <small class="text-danger">{{msg}}</small>
         <div class="form-group">
@@ -26,8 +28,8 @@
           <label><input type="checkbox" name="remember"> Remember me</label>
         </div>
 
-        <button [disabled]="!ngForm.valid" type="submit" class="btn btn-info" style="border: none;">Login</button>
-        <small class="lin" [routerLink]="['/registration']">New user ? Register here !</small>
+        <button [disabled]="!ngForm.valid" type="submit" class="btn btn-info" style="border: none;" >Login</button>
+        <small class="lin" [routerLink]="['/registrationmoniteur']">New user ? Register here !</small>
       </form>
 
     </div>

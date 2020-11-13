@@ -19,8 +19,8 @@ export class LogincavalierComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngForm = this._formBuilder.group({
-      emailId : ['', [Validators.required, Validators.email]],
-      password : ['', Validators.required]
+      emailId: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
     });
   }
 
@@ -28,22 +28,23 @@ export class LogincavalierComponent implements OnInit {
 
     this._service.loginUserFromRemote(
       {
-        id:-1,
+        id: -1,
         emailId: this.ngForm.get('emailId').value,
         userName: "",
         password: this.ngForm.get('password').value,
-      } as User ).subscribe(
+      } as User).subscribe(
 
-      // error => {
-      //   console.log("Exception occured");
-      //   this.msg = "Bad credentials, please enter valid emailId and password";
-      // }, 
-      
-      data => {
-        console.log("Response received");
-        this._router.navigate(['/cavalier-page'])
-      },
-
-    )
+        data => {
+          console.log("Response received");
+          this._router.navigate(['/cavalier-page'])
+        },
+        error => {
+          console.log("Exception occured");
+          this.msg = "Bad credentials, please enter valid emailId and password";
+        },
+      )
+  }
+  gotoregistration() {
+    this._router.navigate(['/registration'])
   }
 }

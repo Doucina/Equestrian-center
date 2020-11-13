@@ -32,17 +32,16 @@ export class LoginComponent implements OnInit {
         userName: "",
         password: this.ngForm.get('password').value,
       } as User ).subscribe(
-
-      // error => {
-      //   console.log("Exception occured");
-      //   this.msg = "Bad credentials, please enter valid emailId and password";
-      // }, 
       
       data => {
         console.log("Response received");
-        this._router.navigate(['/dashboard'])
+        this._router.navigate(['/cavalier-page'])
       },
 
+      error => {
+        console.log("Exception occured");
+        this.msg = "Bad credentials, please enter valid emailId and password";
+      }, 
     )
   }
 

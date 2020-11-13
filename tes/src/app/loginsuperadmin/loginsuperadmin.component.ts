@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegistrationService } from '../registration.service';
 import { User } from '../user';
-import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Superadmin } from '../superadmin';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { FormGroup, FormBuilder, Validator, Validators } from "@angular/forms";
   styleUrls: ['./loginsuperadmin.component.css']
 })
 export class LoginsuperadminComponent implements OnInit {
-  user = new User();
+  superadmin = new Superadmin();
   msg = '';
   ngForm: FormGroup;
 
@@ -24,26 +25,28 @@ export class LoginsuperadminComponent implements OnInit {
     });
   }
 
-  loginUser() {
+  loginSuperadmin() {
 
-    this._service.loginUserFromRemote(
+    this._service.loginSuperadminFromRemote(
       {
-        id: -1,
-        emailId: this.ngForm.get('emailId').value,
-        userName: "",
-        password: this.ngForm.get('password').value,
-      } as User).subscribe(
-
-        // error => {
-        //   console.log("Exception occured");
-        //   this.msg = "Bad credentials, please enter valid emailId and password";
-        // }, 
+        superadminId: -1,
+        superadminEmailId: this.ngForm.get('emailId').value,
+        superadminName: "",
+        superadminPassword: this.ngForm.get('password').value,
+      } as Superadmin).subscribe(
 
         data => {
           console.log("Response received");
           this._router.navigate(['/super-admin-page'])
         },
 
+        error => {
+          console.log("Exception occured");
+          this.msg = "Bad credentials, please enter valid emailId and password";
+        },
       )
+  }
+  gotoregistration() {
+    this._router.navigate(['/registrationsuperadmin'])
   }
 }

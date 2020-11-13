@@ -5,11 +5,13 @@
 
 
 <div class="hero-image">
+<app-loginsuccess></app-loginsuccess>
+
   <div class="container" id="container">
     <div class="form-container log-in-container">
 
 
-      <form [formGroup]="ngForm" (ngSubmit)="loginUser()" class="was-validated">
+      <form [formGroup]="ngForm" (ngSubmit)="loginAdmin()" class="was-validated">
         <h2 class="textual">Login Admin</h2>
         <small class="text-danger">{{msg}}</small>
         <div class="form-group">
@@ -29,7 +31,7 @@
         </div>
 
         <button [disabled]="!ngForm.valid" type="submit" class="btn btn-info" style="border: none;">Login</button>
-        <small class="lin" [routerLink]="['/registration']">New user ? Register here !</small>
+        <small class="lin" [routerLink]="['/registrationadmin']">New user ? Register here !</small>
       </form>
 
     </div>

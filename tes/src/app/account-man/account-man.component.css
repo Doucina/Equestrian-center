@@ -1,70 +1,72 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.disp {
+  padding-top: 80px;
+  background-image: url("https://i.ytimg.com/vi_webp/YyUhslfLfZM/maxresdefault.webp");
+  /* https://i.ytimg.com/vi_webp/xHO30Yrg3kE/maxresdefault.webp */
+  height: 770px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+  min-height: 330px;
+  top: 15%;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.form-group {
+	margin-left: 0px;
+}
+
+.form-container {
+    position: absolute;
+    top: 25px;
+    height: 100%;
   }
-  
-  .disp {
-    padding-top: 80px;
-    background-image: url("https://i.ytimg.com/vi_webp/YyUhslfLfZM/maxresdefault.webp");
-    /* https://i.ytimg.com/vi_webp/xHO30Yrg3kE/maxresdefault.webp */
-    height: 770px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+
+  input {
+    background-color: #eee;
+    border: none;
+    padding: 8px 15px;
+    margin: 4px 38px;
+    width: 21em;
   }
-  
-  .container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    position: relative;
-    overflow: hidden;
-    width: 400px;
-    max-width: 100%;
-    min-height: 330px;
-    top: 15%;
+
+  button {
+    border-radius: 20px;
+    
+    color: #FFFFFF;
+    font-size: 12px;
+    border: 1px solid #fa6045;
+    background-color: #f86d55;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin: 15px 87px;
+    border: none;
   }
-  
-  h3 {
-      text-align: center;
-      padding-top: 10px;
+
+  button:hover {
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
   }
-  
-  .form-group {
-      margin-left: 0px;
-  }
-  
-  .form-container {
-      position: absolute;
-      top: 25px;
-      height: 100%;
-    }
-  
-    input {
-      background-color: #eee;
-      border: none;
-      padding: 8px 15px;
-      margin: 4px 38px;
-      width: 21em;
-    }
-  
-    button {
-      border-radius: 20px;
-      
-      color: #FFFFFF;
-      font-size: 12px;
-      border: 1px solid #fa6045;
-      background-color: #f86d55;
-      font-weight: bold;
-      padding: 12px 45px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: transform 80ms ease-in;
-      margin: 15px 87px;
-      border: none;
-    }
-  
-    button:hover {
-      border: 1px solid #FF4B2B;
-      background-color: #FF4B2B;
-    }
+
+ 

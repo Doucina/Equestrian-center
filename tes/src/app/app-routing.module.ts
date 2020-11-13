@@ -22,6 +22,9 @@ import { CalendarLessonsComponent } from './calendar-lessons/calendar-lessons.co
 import { AccountManComponent } from './account-man/account-man.component';
 import { UsersManComponent } from './users-man/users-man.component';
 
+import { RegistrationadminComponent } from './registrationadmin/registrationadmin.component';
+import { RegistrationsuperadminComponent } from './registrationsuperadmin/registrationsuperadmin.component';
+import { RegistrationmoniteurComponent } from './registrationmoniteur/registrationmoniteur.component';
 
 const routes: Routes = [
 
@@ -32,8 +35,13 @@ const routes: Routes = [
   { path: 'loginadmin', component: LoginadminComponent },
   { path: 'loginsuperadmin', component: LoginsuperadminComponent },
 
+
   { path: 'home', component: HomeComponent },
   { path: 'registration', component: RegistrationComponent },
+  { path: 'registrationadmin', component: RegistrationadminComponent },
+  { path: 'registrationsuperadmin', component: RegistrationsuperadminComponent },
+  { path: 'registrationmoniteur', component: RegistrationmoniteurComponent },
+
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
