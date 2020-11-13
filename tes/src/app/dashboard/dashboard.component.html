@@ -5,7 +5,7 @@
   <div class="bg-img">
     <div class="container">
       <div class="topnav">
-        <!-- <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a> -->
+
         <a routerLink="/dashboard" href="#">Dashboard</a>
         <a routerLink="/home" href="#">Horses</a>
         <a routerLink="employees" class="nav-link" routerLinkActive="active">Employee List</a>
@@ -25,7 +25,6 @@
       </a>
     </div>
 
-
     <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
     <div>
@@ -33,9 +32,7 @@
         <input #heroName />
       </label>
 
-      <button (click)="add(heroName.value); heroName.value=''">
-        add
-      </button>
+      <button (click)="add(heroName.value); heroName.value=''"> add </button>
     </div>
   </div>
 
