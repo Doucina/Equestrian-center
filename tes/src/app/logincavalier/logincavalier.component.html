@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+<div class="hero-image">
+  <app-loginsuccess></app-loginsuccess>
+
+  <div class="container" id="container">
+    <div class="form-container log-in-container">
+
+
+      <form [formGroup]="ngForm" (ngSubmit)="loginUser()" class="was-validated">
+        <h2 class="textual">Login Cavalier</h2>
+        <small class="text-danger">{{msg}}</small>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" formControlName="emailId" 
+          required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}">
+
+        </div>
+
+
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password"
+            required >
+        </div>
+
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+        </div>
+
+        <button [disabled]="!ngForm.valid" type="submit" class="btn btn-info" style="border: none;">Login</button>
+        <small class="lin" [routerLink]="['/registration']">New user ? Register here !</small>
+      </form>
+
+    </div>
+  </div>
+</div>

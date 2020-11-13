@@ -1,0 +1,39 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+  background-size: 410px 220px;
+  box-shadow: 0 4px 8px 0 rgb(80, 78, 78);
+  transition: 0.3s;
+  width: 24%;
+  height: 220px;
+  top: 10em;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  margin-left: 3em;
+}
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 grey;
+}
+
+.text {
+    color:rgb(3, 3, 3); 
+    margin-LEFT: 100px;
+    margin-top: 7.5em;
+}
+
+.disp {
+  padding-top: 80px;
+  background-image: url("https://i.ytimg.com/vi_webp/YyUhslfLfZM/maxresdefault.webp");
+  /* https://i.ytimg.com/vi_webp/xHO30Yrg3kE/maxresdefault.webp */
+  height: 770px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
