@@ -11,3 +11,4 @@
 * Au niveau de la base H2 -> Pour accéder à la console, lancer sur le navigateur **http://localhost:8080/h2-console**
   * Pour créer un nouvel utilisateur **INSERT INTO User VALUES('id', 'email', 'username','password');**
 
+## Différentes Fonctionnalités
