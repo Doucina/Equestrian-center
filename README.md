@@ -12,3 +12,24 @@
   * Pour créer un nouvel utilisateur **INSERT INTO User VALUES('id', 'email', 'username','password');**
 
 ## Différentes Fonctionnalités
+
+#### Page d'accueil :
+![alt text](https://raw.githubusercontent.com/Doucina/Equestrian-center/dev/C1.PNG)
+
+#### Page de connexion Moniteur :
+![alt text](https://raw.githubusercontent.com/Doucina/Equestrian-center/dev/C2.PNG)
+
+#### Admin Page :
+![alt text](https://raw.githubusercontent.com/Doucina/Equestrian-center/dev/C3.PNG)
+
+#### Calendrier des chevaux :
+![alt text](https://raw.githubusercontent.com/Doucina/Equestrian-center/dev/C4.PNG)
+
+#### Liste des cours :
+![alt text](https://raw.githubusercontent.com/Doucina/Equestrian-center/dev/C5.PNG)
+
+#### Calendrier lessons :
+![alt text](https://raw.githubusercontent.com/Doucina/Equestrian-center/dev/C6.PNG)
+
+#### Dashboard :
+![alt text](https://raw.githubusercontent.com/Doucina/Equestrian-center/dev/C7.PNG)
